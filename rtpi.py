@@ -2,7 +2,7 @@
 import urllib, time, datetime
 import xml.dom.minidom
 import json
-from pprint import pprint
+
 
 def req(table, stop, route, fo):
 
@@ -36,27 +36,21 @@ def req(table, stop, route, fo):
 
 	#get file from request
 	f = urllib.urlopen(request)
-	g = str(f.read())
+	g = f.read()
 	f.close()
 
 	if fo == "xml":
 
-		#print xml to console
-		xml = xml.dom.minidom.parseString(g)
-		pretty_xml_as_string = xml.toprettyxml()
-		print pretty_xml_as_string
-
 		#input xml to output_stopid.xml
-		input_xml = open("output_"+stop+".xml", "a")
+		input_xml = open("output_"+stop+".xml", "w")
 		input_xml.write("""<?xml version="1.0" encoding="ISO-8859-1" ?>""") #This line does the trick!
 		input_xml.write(g)
 		input_xml.close()
 
 	elif fo == "json":
-		#print json to console
-		#pprint(g)
+
 		#input xml to output_stopid.json
-		input_json = open("output_"+stop+".json", 'a')
+		input_json = open("output_"+stop+".json", 'w')
 		input_json.write(g)
 		input_json.close()
 
