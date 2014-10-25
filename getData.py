@@ -16,7 +16,7 @@ ts1 = time.time()
 st1 = datetime.datetime.fromtimestamp(ts1).strftime('%Y-%m-%d %H:%M:%S')
 print "\nBEFORE " + st1
 
-#retrieve rtpi info
+#retrieve rtpi data
 rtpi.req(table, stop, route, fo)
 
 #if format == "xml"
@@ -32,7 +32,7 @@ if fo == 'xml':
 	print "---------------------------------------"
 
 	#parse xml file
-	print "OUTPUT FILE: " + xml_output
+	print "OPEN FILE: " + xml_output
 	tree = ET.parse(xml_output)
 	root = tree.getroot()
 
@@ -53,6 +53,7 @@ elif fo == 'json':
 	json_output = "output_"+stop+".json"
 
 	#open json file
+	print "OPEN FILE: " + json_output
 	json_data = open(json_output)
 	data = json.load(json_data)
 	json_data.close()
