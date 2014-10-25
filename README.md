@@ -1,19 +1,20 @@
 RTPI API data request
 ====================
 
-A python program which can request XML file from http://www.dublinked.ie/.
+A python program which can request XML/JSON file from database.
 
 > USAGE: run getData.py.
 
-Future extentions:
+Further extensions:
 
-request and print JSON file. √
+- request and print XML file. √
 
-parse JSON file. √
+- parse XML file.
 
-request and print XML file. √
+- request and print JSON file. √
 
-parse XML file.
+- parse JSON file. √
 
-take inputs like bus stop no. and bus route.
+- take inputs like bus stop no. and bus route. √
+
 
