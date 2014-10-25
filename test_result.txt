@@ -1,0 +1,3 @@
+when you ask for realtime bus info in json format, it should print pretty json and parse everything; 
+however when ask for timetable bus info it will return a no-result json(why? can't figure this out...);
+when ask for xml format, it should be able to print pretty xml and parse only due times as what we did last time.
