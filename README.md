@@ -3,7 +3,7 @@ RTPI API data request
 
 A python program which can request XML file from http://www.dublinked.ie/.
 
-USAGE: run getData.py.
+* USAGE: run getData.py.
 
 Future extentions:
 
