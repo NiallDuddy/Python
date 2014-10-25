@@ -6,6 +6,7 @@ import json
 
 
 #define variables
+## will convert these variables to user inputs later ##
 table = 'r' # t for timetable information, r for realtime bus information
 stop = '262'
 route = '16'
