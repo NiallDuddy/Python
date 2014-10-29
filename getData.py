@@ -1,5 +1,54 @@
 import time, datetime
+<<<<<<< HEAD
 import rtpi
+=======
+import xml.dom.minidom
+import xml.etree.ElementTree as ET
+import json
+
+
+#define variables
+## will convert these variables to user inputs later ##
+table = 'r' # t for timetable information, r for realtime bus information
+stop = '262'
+route = '16'
+fo = 'json' # format = xml/json?
+
+#beginning timestamp
+ts1 = time.time()
+st1 = datetime.datetime.fromtimestamp(ts1).strftime('%Y-%m-%d %H:%M:%S')
+print "\nBEFORE " + st1
+
+#retrieve rtpi data
+rtpi.req(table, stop, route, fo)
+
+#if format == "xml"
+if fo == 'xml':
+
+	#xml file
+	xml_output = "output_"+stop+".xml"
+
+	#print xml file to console
+	xml_data = xml.dom.minidom.parse(xml_output)
+	pretty_xml_as_string = xml_data.toprettyxml()
+	print pretty_xml_as_string
+	print "---------------------------------------"
+
+	#parse xml file
+	print "OPEN FILE: " + xml_output
+	tree = ET.parse(xml_output)
+	root = tree.getroot()
+
+	for child in root:
+		print child.tag, child.attrib
+
+	print "\n---------------------------------------\n"
+
+	print root[5]
+
+	for i in root[5]:
+		print i[1].text
+>>>>>>> 9c013aacf6682845cc6c1064c5e1ba12c5e27c6b
 
 # examle inputs:
 # table = 'r' # r for realtime bus information, t for timetable information
